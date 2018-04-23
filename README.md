@@ -1,4 +1,4 @@
-# Abilitylab Signage Hardware
+# Installation Project
 Master Controller and Display Application for installation project.
 
 ![Tech Diagram](tech_diagram.png?raw=true "Tech Diagram")
