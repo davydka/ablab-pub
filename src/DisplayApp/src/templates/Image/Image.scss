@@ -1,0 +1,30 @@
+.image {
+    overflow: hidden;
+
+    &__img {
+
+        width: 980px;
+        height: 1617px;
+        object-fit: contain;
+
+        .card-enter & {
+            opacity: .01;
+            transform: scale(.9) translate3d(0, 0, 0);
+        }
+
+        .card-enter-active & {
+            opacity: 1;
+            transform: scale(1) translate3d(0, 0, 0);
+            transition: 2s all $fadeout $easeOutQuint;
+        }
+
+        .card-leave & {
+            transform: scale(1);
+        }
+
+        .card-leave-active & {
+            transform: scale(.95);
+            transition: $fadeout all $easeOutQuint;
+        }
+    }
+}

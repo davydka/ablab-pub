@@ -1,0 +1,35 @@
+.squiggle {
+    display: inline-block;
+    height: 24px;
+    width: 90px;
+    margin-right: 19px;
+
+    &__path {
+        fill: none;
+        stroke: $accent-yellow;
+        stroke-width: 6px;
+        stroke-linecap: round;
+        stroke-dasharray: 116.544, 116.544;
+        stroke-dashoffset: 0;
+
+        .card-enter & {
+            opacity: 0;
+            stroke-dashoffset: 115px;
+        }
+
+        .card-enter-active & {
+            opacity: 1;
+            stroke-dashoffset: 0;
+            transition: 1s all ($fadeout + 1s) $easeOutQuart, 0s opacity 0s;
+        }
+
+        .card-leave & {
+            stroke-dashoffset: 0;
+        }
+
+        .card-leave-active & {
+            stroke-dashoffset: -115px;
+            transition: $fadeout $easeOutQuart;
+        }
+    }
+}

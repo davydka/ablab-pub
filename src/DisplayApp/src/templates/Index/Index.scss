@@ -1,0 +1,21 @@
+.index {
+    &__title {
+        margin: 60px 0;
+    }
+
+    &__item {
+        margin-bottom: 12px;
+
+        &::before {
+            top: 26px;
+        }
+    }
+
+    &__link {
+        cursor: pointer;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

@@ -1,0 +1,92 @@
+.text-and-image {
+    width: 100%;
+    max-width: 100%;
+    display: grid;
+    align-content: center;
+    grid-row-gap: 75px;
+    text-align: center;
+    max-height: 1614px;
+
+    &__title,
+    &__eyebrow {
+        position: relative;
+        max-width: calc(100vw - #{$appPadding * 2});
+
+        .card-enter & {
+            opacity: 0;
+            top: 40px;
+        }
+
+        .card-enter-active & {
+            opacity: 1;
+            top: 0;
+            transition: 1.7s all ($fadeout + .3s) $easeOutQuart;
+        }
+
+        .card-leave & {
+            top: 0;
+            opacity: 1;
+        }
+
+        .card-leave-active & {
+            top: -40px;
+            opacity: 0;
+            transition: $fadeout all $easeOutQuart;
+        }
+    }
+
+    &__img {
+        height: 720px;
+        width: 100%;
+        max-width: calc(100vw - #{$appPadding * 2});
+
+        .card-enter & {
+            opacity: 0;
+            transform: scale(.8) translate3d(0, 0, 0);
+        }
+
+        .card-enter-active & {
+            opacity: 1;
+            transform: scale(1) translate3d(0, 0, 0);
+            transition: 1.5s all ($fadeout + .5s) $easeOutQuint;
+        }
+
+        .card-leave & {
+            transform: scale(1) translate3d(0, 0, 0);
+            opacity: 1;
+        }
+
+        .card-leave-active & {
+            transform: scale(.9) translate3d(0, 0, 0);
+            opacity: 0;
+            transition: $fadeout all $easeOutQuint;
+        }
+    }
+
+    &__paragraph {
+        margin: 0 115px;
+        position: relative;
+
+        .card-enter & {
+            opacity: 0;
+            top: -40px;
+        }
+
+        .card-enter-active & {
+            opacity: 1;
+            top: 0;
+            transition: 1.7s all ($fadeout + .3s) $easeOutQuart;
+        }
+
+        .card-leave & {
+            top: 0;
+            opacity: 1;
+        }
+
+        .card-leave-active & {
+            top: 40px;
+            opacity: 0;
+            transition: $fadeout all $easeOutQuart;
+        }
+    }
+}

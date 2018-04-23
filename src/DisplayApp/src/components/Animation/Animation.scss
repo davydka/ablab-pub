@@ -1,0 +1,71 @@
+.animation {
+    position: relative;
+
+    // Helix
+    &__canvas {
+        float: right;
+        position: relative;
+
+        .card-enter & {
+            transform: translate(0, 80px);
+            opacity: 0;
+        }
+
+        .card-enter-active & {
+            transform: translate(0, 0);
+            opacity: 1;
+            transition: 1s all ($fadeout + 1s) ease-out;
+        }
+    }
+
+    &__circle {
+        fill: $orange;
+
+        &--back {
+            fill: $red;
+        }
+
+        &--crossing {
+            fill: $black;
+        }
+    }
+
+    // Head
+    &__svg {
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translate(0, -50%);
+
+        .card-enter & {
+            transform: translate(30px, -50%);
+            opacity: 0;
+        }
+
+        .card-enter-active & {
+            transform: translate(0, -50%);
+            opacity: 1;
+            transition: 1.5s all ($fadeout + 1s) $easeOutQuint;
+        }
+    }
+
+    &__head-circle {
+        fill: $light-orange;
+        transform-origin: 50% 50%;
+    }
+
+    &__head {
+        transform: translate(84px, 0);
+        fill: $maroon;
+    }
+
+    &__triangle {
+        fill: $lime;
+        transform-origin: 50% 50%;
+
+        &--left {
+            fill: $dark-orange;
+        }
+    }
+}

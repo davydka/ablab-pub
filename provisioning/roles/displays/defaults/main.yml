@@ -1,0 +1,5 @@
+---
+# defaults file for ansible-role-disable_crash_reporters
+_disable_crash_reporters:
+  disable_apport: yes
+  disable_whoopsie: yes

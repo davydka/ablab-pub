@@ -1,0 +1,105 @@
+.footer {
+    width: 100%;
+    grid-column: 1;
+    grid-row: 3 / 4;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    justify-content: start;
+    align-content: center;
+    border-top: 1px solid $white;
+    z-index: $z-index-mid;
+    transition: ($fadeout / 2) opacity $fadeout;
+    opacity: 1;
+
+    .app[data-hidden="true"] & {
+        opacity: 0;
+        transition: ($fadeout / 2) opacity ($fadeout / 2);
+    }
+
+    &__counter {
+        line-height: 58px;
+        height: 58px;
+        padding-left: 60px;
+        position: relative;
+    }
+
+    &__card-number,
+    &__url {
+        font-weight: bold;
+    }
+
+    &__url {
+        cursor: pointer;
+    }
+
+    &__cta {
+        text-align: right;
+    }
+
+    &.card-appear,
+    &.card-enter {
+        opacity: 0;
+    }
+
+    &.card-appear-active,
+    &.card-enter-active {
+        opacity: 1;
+        transition: .5s opacity .5s;
+    }
+
+    &.card-leave {
+        opacity: 1;
+    }
+
+    &.card-leave-active {
+        opacity: 0;
+        transition: .5s opacity;
+    }
+
+    // Animate footer URL in and out
+    &__column--right {
+        &.footer-enter {
+            opacity: 0;
+        }
+
+        &.footer-enter-active {
+            opacity: 1;
+            transition: $fadeout all $fadeout;
+        }
+
+        &.footer-leave {
+            opacity: 1;
+        }
+
+        &.footer-leave-active {
+            opacity: 0;
+            transition: $fadeout all;
+        }
+    }
+}
+
+.footer-spinner {
+    display: block;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate3d(0, -50%, 0) rotate(-90deg);
+
+    &__border,
+    &__progress {
+        fill: none;
+        stroke: $white;
+    }
+
+    &__border {
+        stroke-width: 2px;
+    }
+
+    &__progress {
+        stroke-width: 14px;
+        stroke-dasharray: 43.98px; // 2πr
+        stroke-dashoffset: 43.98px; // 2πr
+    }
+}

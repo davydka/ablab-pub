@@ -1,0 +1,60 @@
+---
+- name: Make a copy of security repos
+  shell: cat /etc/apt/sources.list|grep secu >/etc/apt/security.sources.list
+  tags: setup, security
+
+- name: Update cache
+  apt: update_cache=yes
+  become: yes
+  tags: setup, security
+
+- name: Install security updates
+  shell: apt upgrade -oDir::Etc::SourceList=/etc/apt/security.sources.list --force-yes -y
+  become: yes
+  tags: setup, security
+
+- name: Setup the Git repo
+  git: repo={{ git_repo }}
+       version={{ git_branch }}
+       dest={{ project_path }}
+       accept_hostkey=yes
+       key_file="{{ git_ssh_priv_key }}"
+  when: setup_git_repo is defined and setup_git_repo
+  tags: setup, deploy
+
+- name: Ensure that the application file permissions are set properly
+  file: path={{ project_path }}
+        recurse=yes
+        owner={{ user }}
+        group={{ group }}
+        state=directory
+  tags: setup
+
+- name: run npm install
+  shell: npm install
+  register: npm_finished
+  failed_when: '"ERR!" in npm_finished.stderr'
+  args:
+    chdir: "{{ project_src_root }}"
+  tags: setup, deploy
+
+- name: Copy env configuration in place.
+  template:
+    src: "{{ env_template }}"
+    dest: "{{ env_file_path }}"
+    owner: "{{ user }}"
+    group: "{{ group }}"
+    mode: 0644
+  tags: setup, deploy
+
+- name: Run npm start.
+  shell: cd {{ project_src_root }}; npm run stop; npm run start;
+  tags: setup, deploy
+
+- name: restart machine
+  become: yes
+  shell: sleep 2 && shutdown -r now "Ansible updates triggered"
+  async: 1
+  poll: 0
+  ignore_errors: true
+  tags: restart

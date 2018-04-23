@@ -1,0 +1,161 @@
+.event {
+    display: grid;
+    grid-template-rows: 1fr 875px 1fr;
+    align-items: center;
+    position: relative;
+
+    &__circle {
+        grid-row: 2 / 3;
+        grid-column: 1;
+        height: 875px;
+        width: 875px;
+        transform: scale(1) translate3d(0, 0, 0);
+
+        .card-enter & {
+            transform: scale(.5) translate3d(0, 0, 0);
+            opacity: 0;
+        }
+
+        .card-enter-active & {
+            transform: scale(1) translate3d(0, 0, 0);
+            opacity: 1;
+            transition: 2s all $fadeout $easeOutQuart;
+        }
+
+        .card-leave & {
+            transform: scale(1) translate3d(0, 0, 0);
+            opacity: 1;
+        }
+
+        .card-leave-active & {
+            transform: scale(.65) translate3d(0, 0, 0);
+            opacity: 0;
+            transition: $fadeout all $easeOutQuart;
+        }
+    }
+
+    &__content {
+        grid-row: 1 / 3;
+        grid-column: 1;
+        position: relative;
+        height: 100%;
+    }
+
+    &__centerer {
+        min-height: 875px; // circle height
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: grid;
+        align-content: center;
+    }
+
+    &__eyebrow {
+        position: relative;
+
+        .card-enter & {
+            top: 40px;
+
+            .eyebrow__text {
+                opacity: 0;
+            }
+        }
+
+        .card-enter-active & {
+            top: 0;
+            transition: 1s all ($fadeout + .8s) $easeOutQuart;
+
+            .eyebrow__text {
+                opacity: 1;
+                transition: 1s all ($fadeout + .8s) $easeOutQuart;
+            }
+        }
+
+        .card-leave & {
+            top: 0;
+
+            .eyebrow__text {
+                opacity: 1;
+            }
+        }
+
+        .card-leave-active & {
+            top: -40px;
+            transition: $fadeout all $easeOutQuart;
+
+            .eyebrow__text {
+                opacity: 0;
+                transition: $fadeout all $easeOutQuart;
+            }
+        }
+    }
+
+    &__header {
+        margin-bottom: 60px;
+        position: relative;
+
+        .card-enter & {
+            opacity: 0;
+            top: 40px;
+        }
+
+        .card-enter-active & {
+            opacity: 1;
+            top: 0;
+            transition: 1s all ($fadeout + .8s) $easeOutQuart;
+        }
+
+        .card-leave & {
+            top: 0;
+            opacity: 1;
+        }
+
+        .card-leave-active & {
+            top: -40px;
+            opacity: 0;
+            transition: .7s all $easeOutQuart;
+        }
+    }
+
+    &__subheader {
+        margin-bottom: 12px;
+
+        &:last-of-type {
+            margin: 0;
+        }
+    }
+
+    &__paragraph {
+        grid-row: 3 / 4;
+        grid-column: 1;
+        width: 50%;
+        justify-self: end;
+    }
+
+    &__subheader,
+    &__paragraph {
+        position: relative;
+
+        .card-enter & {
+            opacity: 0;
+            top: 40px;
+        }
+
+        .card-enter-active & {
+            opacity: 1;
+            top: 0;
+            transition: 1s all ($fadeout + 1s) $easeOutQuint;
+        }
+
+        .card-leave & {
+            top: 0;
+            opacity: 1;
+        }
+
+        .card-leave-active & {
+            top: -40px;
+            opacity: 0;
+            transition: .7s all .3s $easeOutQuint;
+        }
+    }
+}

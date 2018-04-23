@@ -1,0 +1,109 @@
+---
+- name: Update apt cache (Debian).
+  apt: update_cache=yes cache_valid_time=86400
+  when: ansible_os_family == 'Debian'
+  tags: setup, deploy
+
+- name: Get software for Python-based control.
+  apt: "name={{ item }} state=installed"
+  with_items:
+    - curl
+    - python-apt
+    - python-pycurl
+    - build-essential
+    - git
+    - curl
+    - build-essential
+    - libssl-dev
+  tags: setup, deploy
+
+- name: Ensure git is installed (Debian).
+  apt:
+    name: "{{ item }}"
+    state: installed
+  with_items: '{{ debian_packages }}'
+  when: ansible_os_family == 'Debian'
+  tags: setup
+
+- name: create default group for web application
+  group: name={{ group }} state=present
+  tags: setup
+
+- name: create a specific user for deploy and run the application
+  user: name={{ user }} groups="{{ group }}" append=yes
+  tags: setup
+
+- name: create .ssh directory
+  file: path=/home/{{ user }}/.ssh state=directory
+  tags: setup
+
+- name: Copy id_rsa data
+  copy: src=id_rsa dest=/home/{{ user }}/.ssh/id_rsa
+  tags: setup
+
+- name: set id_rsa permission
+  file: path=/home/{{ user }}/.ssh/id_rsa mode=0600
+  tags: setup
+
+- name: Copy id_rsa data
+  copy: src=id_rsa.pub dest=/home/{{ user }}/.ssh/id_rsa.pub
+  tags: setup
+
+- name: Copy authorized_keys data
+  copy: src=authorized_keys dest=/home/{{ user }}/.ssh/authorized_keys
+  tags: setup
+
+- name: Install Required Packages
+  apt: name={{ item }} state=installed update_cache=yes
+  with_items: "{{required_packages}}"
+
+- name: get stats on nvm
+  stat: path="{{ nvm_dest }}"
+  register: nvm_stat
+
+- name: download nvm script
+  get_url:
+    dest: "{{ nvm_working_path }}"
+    url: https://raw.githubusercontent.com/creationix/nvm/{{ nvm_version }}/install.sh
+  when: not nvm_stat.stat.exists
+
+- name: run nvm script
+  command: "bash {{ nvm_working_path }}/install.sh"
+  become: true
+  become_user: "{{nvm_user}}"
+  when: not nvm_stat.stat.exists
+
+- name: update .nvm dir permission
+  file:
+    path: "{{ nvm_dest }}"
+    group: "{{ nvm_user }}"
+    owner: "{{ nvm_user }}"
+    mode: 0755
+    recurse: yes
+    state: directory
+
+- name: add nvm to ~/.bashrc
+  lineinfile: dest="{{ nvm_working_path }}/.bashrc" line="source ~/.nvm/nvm.sh"
+
+- name: install node
+  shell: "source {{ nvm_dest }}/nvm.sh && nvm install {{ item }}"
+  become: true
+  become_user: "{{nvm_user}}"
+  args:
+     executable: /bin/bash
+  with_items: "{{nvm_node_versions}}"
+
+- name: set default Node version {{ nvm_default_node_version }} to be used in new shell
+  shell: "source {{nvm_dest}}/nvm.sh && nvm alias default {{nvm_default_node_version}}"
+  args:
+     executable: /bin/bash
+  become: true
+  become_user: "{{nvm_user}}"
+
+- name: install npm module(s)
+  shell: bash -lc "source {{ nvm_dest }}/nvm.sh && nvm use {{ item.0 }} && npm install -g {{ item.1.pkg }}@{{ item.1.version }}"
+  become: true
+  become_user: "{{nvm_user}}"
+  with_nested:
+    - "{{ nvm_node_versions }}"
+    - "{{ nvm_npm_pkgs }}"

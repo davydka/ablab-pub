@@ -1,0 +1,162 @@
+{
+  "theme": "welcome",
+  "cycle_duration": "20",
+  "slug": "ground-floor",
+  "bundle_location": "sites/default/files/signage/feeds/ground-floor",
+  "bundled_at": 1510676904,
+  "content": [
+    {
+      "id": "37",
+      "label": "Phased client-server parallelism",
+      "type": "list",
+      "data": {
+        "header": "Aut illo dolor.",
+        "list_items": [
+          {
+            "title": "Short title",
+            "subcopy": "Sint ad molestias accusantium laborum."
+          },
+          {
+            "title": "Short title",
+            "subcopy": "Fugit et deleniti et deserunt cupiditate ut."
+          },
+          {
+            "title": "Short title",
+            "subcopy": "Ex qui omnis eum quae. Ea eligendi et in sed."
+          },
+          {
+            "title": "Short title",
+            "subcopy": "Quis iure laborum et nemo et beatae."
+          },
+          {
+            "title": "Short title",
+            "subcopy": "Voluptates sunt labore molestiae ut quis iusto."
+          },
+          {
+            "title": "Short title",
+            "subcopy": "Unde error et nam dolores totam."
+          }
+        ]
+      }
+    },
+    {
+      "id": "38",
+      "label": "Synergistic even-keeled product",
+      "type": "quote",
+      "data": {
+        "body": "Totam laborum ut eaque ut possimus omnis est. Nesciunt laborum quia non sunt.",
+        "subcopy": "Corporis sunt omnis fuga ut facere ut."
+      }
+    },
+    {
+      "id": "35",
+      "label": "Diverse web-enabled matrices",
+      "type": "community",
+      "data": {
+        "profile": {
+          "display_name": "Nyah Feeney PhD",
+          "position": "Economist",
+          "image": "http://www.fillmurray.com/g/875/875"
+        },
+        "body": "Corrupti quia soluta aut nobis voluptatem."
+      }
+    },
+    {
+      "id": "31",
+      "label": "Centralized nextgeneration attitude",
+      "type": "announcement",
+      "data": {
+        "type": "alert",
+        "body": "Et perferendis non nisi. Provident est dolorem veritatis et.",
+        "subcopy": "Quas et odio veniam dolorum optio est fugiat. Quam deleniti id aut facilis alias quia facere. Nobis quia rerum tenetur ad dolores ipsa."
+      }
+    },
+    {
+      "id": "50",
+      "label": "Exclusive user-facing moderator",
+      "type": "event",
+      "data": {
+        "eyebrow": "Quam temporibus est iste sed.",
+        "title": "Et quo magnam esse autem cumque. Molestiae omnis vero dolor. Natus et dolores nihil rem sint.",
+        "start_date_time": 544879335,
+        "end_date_time": 1147816141,
+        "location": "Ut quae quibusdam est iste vel id debitis.",
+        "subcopy": "Dolores dolorem deserunt voluptas adipisci soluta. Qui modi et aut minus dolores est velit. Nobis totam et et est.",
+        "background_image": "http://www.fillmurray.com/g/875/875"
+      }
+    },
+    {
+      "id": "47",
+      "label": "Pre-emptive zerotolerance frame",
+      "type": "quote",
+      "data": {
+        "body": "Optio culpa voluptatum et ut placeat nesciunt. Praesentium vitae aut dicta. Maxime ducimus hic ut.",
+        "subcopy": "Facere vitae odit doloribus velit voluptatem qui."
+      }
+    },
+    {
+      "id": "15",
+      "label": "Multi-lateral full-range challenge",
+      "type": "image",
+      "data": {
+        "image": "http://www.fillmurray.com/g/960/1680"
+      }
+    },
+    {
+      "id": "27",
+      "label": "Vision-oriented encompassing help-desk",
+      "type": "text_image",
+      "data": {
+        "eyebrow": "Ducimus provident sed quasi.",
+        "title": "Enim vel esse harum praesentium perspiciatis rem",
+        "subcopy": "Assumenda reiciendis iste possimus deleniti at quibusdam. Ut voluptates libero exercitationem laboriosam atque accusamus.",
+        "image": "http://www.fillmurray.com/g/500/500"
+      }
+    },
+    {
+      "id": "20",
+      "label": "Secured system-worthy structure",
+      "type": "research",
+      "data": {
+        "eyebrow": "Molestiae nihil aut quas a.",
+        "title": "Aperiam earum omnis sint eius quis sit. Debitis odit ut accusantium dolorem est. Aut quo et ipsam temporibus sit sed suscipit.",
+        "header": "Ipsam est aut delectus.",
+        "subcopy": "Cupiditate vel ut est non est. Dolore beatae vero expedita optio fugiat. Qui aut aut ratione totam qui neque eum.",
+        "background_image": "http://www.fillmurray.com/g/960/1680"
+      }
+    },
+    {
+      "id": "11",
+      "label": "Switchable 3rdgeneration solution",
+      "type": "welcome",
+      "data": {
+        "title": "At.",
+        "subcopy": "Autem est hic sunt sapiente accusantium nisi eveniet."
+      }
+    },
+    {
+      "id": "25",
+      "label": "Stand-alone contextually-based protocol",
+      "type": "community",
+      "data": {
+        "profile": {
+          "display_name": "Miguel Lueilwitz",
+          "position": "Biochemist or Biophysicist",
+          "image": "http://www.fillmurray.com/g/875/875"
+        },
+        "body": "Dolores odio natus quia ut. Omnis nulla voluptatem doloribus ipsum. Nam aut sint voluptatem et."
+      }
+    },
+    {
+      "id": "30",
+      "label": "Extended 4thgeneration support",
+      "type": "text_image",
+      "data": {
+        "eyebrow": "Totam et quo perferendis est.",
+        "title": "Ut animi quis et corporis aut atque",
+        "subcopy": "Voluptas officiis cumque enim quia optio. Sit quis voluptas qui libero aut. A temporibus optio nobis minima tenetur.",
+        "image": "http://www.fillmurray.com/g/500/500"
+      }
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+---
+- name: Abilitylab Master Controller Server
+  hosts: master
+  remote_user: deploy
+
+  vars_files:
+  - group_vars/master
+
+  roles:
+    - master

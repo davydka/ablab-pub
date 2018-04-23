@@ -1,0 +1,61 @@
+@font-face {
+    font-family: 'GTSectra';
+    font-weight: normal;
+    src: url("/dist/fonts/GT-Sectra-Medium.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: 'GTSectra';
+    font-style: italic;
+    src: url("/dist/fonts/GT-Sectra-Medium-Italic.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: 'GTSectra';
+    font-weight: bold;
+    src: url("/dist/fonts/GT-Sectra-Bold.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: 'GTSectra';
+    font-weight: bold;
+    font-style: italic;
+    src: url("/dist/fonts/GT-Sectra-Bold-Italic.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: 'Gibson';
+    font-weight: normal;
+    src: url("/dist/fonts/_Canada Type_ Gibson Regular Typeface.otf") format('truetype');
+}
+
+@font-face {
+    font-family: 'Gibson';
+    font-style: italic;
+    src: url("/dist/fonts/_Canada Type_ Gibson Italic Typeface.otf") format('truetype');
+}
+
+@font-face {
+    font-family: 'Gibson';
+    font-weight: bold;
+    src: url("/dist/fonts/_Canada Type_ Gibson Semi Bold Typeface.otf") format('truetype');
+}
+
+@font-face {
+    font-family: 'Gibson';
+    font-weight: bold;
+    font-style: italic;
+    src: url("/dist/fonts/_Canada Type_ Gibson Semi Bold Italic Typeface.otf") format('truetype');
+}
+
+// Mixins
+
+@mixin serif {
+    font-family: 'GTSectra', serif;
+    font-weight: normal;
+}
+
+@mixin sans-serif {
+    font-family: 'Gibson', sans-serif;
+    font-weight: normal;
+}

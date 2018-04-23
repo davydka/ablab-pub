@@ -1,0 +1,12 @@
+.icon {
+    &__path {
+        stroke: none;
+        fill: $white;
+    }
+
+    @each $item in $colors {
+        &--#{map-get($item, name)} .icon__path {
+            fill: map-get($item, color);
+        }
+    }
+}

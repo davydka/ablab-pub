@@ -1,0 +1,61 @@
+.circle {
+    border-radius: 875px;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+    align-self: center;
+    justify-self: center;
+    margin: 0 auto;
+
+    @each $item in $colors {
+        &--#{map-get($item, name)} {
+            background-color: map-get($item, color);
+        }
+    }
+
+    &--with-image {
+        position: relative;
+        transform: translate3d(0, 0, 0);
+
+        &::before {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        @each $item in $circle-gradients {
+            &.circle--#{map-get($item, name)}::before {
+                background-image: linear-gradient(180deg, #{map-get($item, start)} 0%, #{map-get($item, end)} 100%);
+            }
+        }
+    }
+
+    &__svg {
+        position: relative;
+    }
+
+    &__image {
+        filter: grayscale(100%) contrast(170%);
+        display: block;
+        opacity: .5;
+        object-fit: cover;
+    }
+
+    &--full-opacity {
+        &::before {
+            display: none;
+        }
+
+        .circle__image {
+            filter: grayscale(100%);
+            opacity: 1;
+            mix-blend-mode: initial;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}

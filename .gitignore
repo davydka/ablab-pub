@@ -1,0 +1,14 @@
+.DS_Store
+.idea
+.env
+npm-debug.log
+package-lock.json
+node_modules
+
+src/DisplayApp/dist
+src/DisplayApp/Background/bin
+src/MasterController/assets
+!src/MasterController/**/.gitkeep
+.vagrant
+/provisioning/displays.retry
+/provisioning/master.retry

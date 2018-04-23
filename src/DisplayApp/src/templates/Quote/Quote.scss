@@ -1,0 +1,77 @@
+.app .quote {
+    overflow: visible;
+}
+
+.quote {
+    display: grid;
+    width: 100%;
+    grid-template-rows: 11fr 5fr;
+
+    &__content {
+        grid-row: 1;
+        display: grid;
+        align-content: center;
+        grid-row-gap: 60px;
+    }
+
+    &__icon {
+        width: 70px;
+        position: relative;
+
+        path {
+            fill: $accent-yellow;
+        }
+
+        .card-enter & {
+            opacity: 0;
+            top: 40px;
+        }
+
+        .card-enter-active & {
+            opacity: 1;
+            top: 0;
+            transition: 1s all ($fadeout + .5s) $easeOutQuint;
+        }
+
+        .card-leave & {
+            opacity: 1;
+            top: 0;
+        }
+
+        .card-leave-active & {
+            opacity: 0;
+            top: -20px;
+            transition: .5s all $easeOutQuint;
+        }
+    }
+
+    &__eyebrow {
+        position: relative;
+
+        .card-enter & {
+            opacity: 0;
+            top: 20px;
+        }
+
+        .card-enter-active & {
+            opacity: 1;
+            top: 0;
+            transition: .5s all ($fadeout + 1.5s) $easeOutQuint;
+        }
+
+        .card-leave & {
+            opacity: 1;
+            top: 0;
+        }
+
+        .card-leave-active & {
+            opacity: 0;
+            top: -20px;
+            transition: .5s all .5s $easeOutQuint;
+        }
+    }
+
+    &__illustration {
+        grid-row: 2;
+    }
+}

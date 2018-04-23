@@ -1,0 +1,8 @@
+node_modules/**
+dist/**
+DisplayApp/dist/**
+DisplayApp/webpack.config.js
+DisplayApp/index.js
+DisplayApp/src/vendor/**
+
+MasterController/**

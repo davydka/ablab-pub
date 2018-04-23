@@ -1,0 +1,70 @@
+{
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es6": true,
+        "node": true
+    },
+    "extends": "airbnb",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "experimentalObjectRestSpread": true,
+            "jsx": true
+        },
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react"
+    ],
+    "rules": {
+		"brace-style": ["error", "stroustrup"],
+		"class-methods-use-this": "off",
+		"comma-dangle": ["error", "never"],
+		"curly": ["error", "all"],
+		"eol-last": "off",
+		"func-names": ["error", "never"],
+        "indent": [
+            2,
+            "tab",
+            {
+                "SwitchCase": 1,
+                "VariableDeclarator": 1
+            }
+        ],
+        "linebreak-style": "off",
+		"max-len": "off",
+		"no-debugger": "warn",
+		"no-implicit-coercion": ["error", {
+			"boolean": true,
+			"number": true,
+			"string": true,
+			"allow": []
+		}],
+		"no-plusplus": "off",
+        "no-tabs": 0,
+		"no-underscore-dangle": "off",
+		"one-var": "off",
+		"one-var-declaration-per-line": "off",
+		"operator-assignment": "off",
+		"prefer-destructuring": ["warn", {
+			"array": true,
+			"object": true
+		}],
+        "quotes": ["error", "single"],
+        "semi": ["error", "always"],
+		"semi-spacing": "off",
+		"space-before-function-paren": ["error", {
+			"anonymous": "never",
+			"named": "never",
+			"asyncArrow": "never"
+		}],
+
+		// React
+		"import/extensions": "off",
+		"react/forbid-prop-types": "off",
+		"react/jsx-filename-extension": "off",
+		"react/jsx-indent": "off",
+		"react/jsx-indent-props": "off",
+		"react/prefer-stateless-function": "off"
+    }
+}

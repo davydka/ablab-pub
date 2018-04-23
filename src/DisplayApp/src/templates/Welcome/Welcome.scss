@@ -1,0 +1,141 @@
+// Override default grid
+.app .welcome {
+    grid-row: 1 / 4;
+    grid-column: 1;
+    text-align: center;
+    width: 100vw;
+    margin: 0 -60px;
+    display: grid;
+    grid-template: 1fr 1fr / 1fr;
+    max-height: none;
+    max-width: none;
+}
+
+.welcome {
+    &__background {
+        grid-row: 1 / 3;
+        grid-column: 1;
+        position: relative;
+
+        &::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        @each $item in $welcome-gradients {
+            &--#{map-get($item, name)}::after {
+                background-image: linear-gradient(180deg, transparent 0%, #{map-get($item, end)} 75%);
+            }
+        }
+    }
+
+    &__svg {
+        object-fit: cover;
+        display: block;
+        position: relative;
+
+        .card-enter & {
+            opacity: 0;
+            transform: scale(1.1);
+        }
+
+        .card-enter-active & {
+            opacity: 1;
+            transform: scale(1);
+            transition: 2s all $fadeout $easeOutQuint;
+        }
+
+        .card-leave & {
+            transform: scale(1);
+        }
+
+        .card-leave-active & {
+            transform: scale(1.05);
+            transition: $fadeout $easeOutQuint;
+        }
+    }
+
+    &__content {
+        grid-row: 2 / 3;
+        grid-column: 1;
+        align-self: center;
+        padding: 0 60px 140px;
+        position: relative;
+    }
+
+    &__accent {
+        margin-bottom: 110px;
+        position: relative;
+
+        .card-leave & {
+            top: 0;
+            opacity: 1;
+        }
+
+        .card-leave-active & {
+            top: -40px;
+            opacity: 0;
+            transition: .5s all $easeOutQuint;
+        }
+    }
+
+    &__title {
+        margin-bottom: 60px;
+        position: relative;
+
+        .card-enter & {
+            opacity: 0;
+            top: 40px;
+        }
+
+        .card-enter-active & {
+            opacity: 1;
+            top: 0;
+            transition: 1.5s all ($fadeout + .7s) $easeOutQuint;
+        }
+
+        .card-leave & {
+            top: 0;
+            opacity: 1;
+        }
+
+        .card-leave-active & {
+            top: -40px;
+            opacity: 0;
+            transition: .5s all $easeOutQuint;
+        }
+    }
+
+    &__subcopy.medium {
+        position: relative;
+        font-size: 60px;
+        line-height: 1.33;
+
+        .card-enter & {
+            opacity: 0;
+            top: 40px;
+        }
+
+        .card-enter-active & {
+            opacity: 1;
+            top: 0;
+            transition: 1.8s all ($fadeout + .9s) $easeOutQuint;
+        }
+
+        .card-leave & {
+            top: 0;
+            opacity: 1;
+        }
+
+        .card-leave-active & {
+            top: -40px;
+            opacity: 0;
+            transition: .5s all .2s $easeOutQuint;
+        }
+    }
+}

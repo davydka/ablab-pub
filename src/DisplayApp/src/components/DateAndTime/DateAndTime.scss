@@ -1,0 +1,47 @@
+.date-and-time {
+    grid-row: 1 / 2;
+    grid-column: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: start;
+    align-content: center;
+    z-index: $z-index-mid;
+    transition: ($fadeout / 2 ) opacity;
+    opacity: 1;
+
+    .app[data-hidden="true"] & {
+        opacity: 0;
+    }
+
+    &__item {
+        font-weight: bold;
+        padding-bottom: 20px;
+        // we use this padding instead of making the header taller
+        // so the header and footer are the same height
+        // allowing main content to be vertially centered with grid
+
+        &:last-child {
+            justify-self: end;
+        }
+    }
+
+    &.card-appear,
+    &.card-enter {
+        opacity: 0;
+    }
+
+    &.card-appear-active,
+    &.card-enter-active {
+        opacity: 1;
+        transition: .5s opacity .5s;
+    }
+
+    &.card-leave {
+        opacity: 1;
+    }
+
+    &.card-leave-active {
+        opacity: 0;
+        transition: .5s opacity;
+    }
+}

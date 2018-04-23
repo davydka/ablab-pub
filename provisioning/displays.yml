@@ -1,0 +1,10 @@
+---
+- name: Install Abilitylab Display Apps
+  hosts: displays
+  remote_user: deploy
+
+  vars_files:
+  - group_vars/displays
+
+  roles:
+    - displays

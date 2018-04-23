@@ -1,0 +1,99 @@
+.app .list {
+    overflow: visible;
+}
+
+.list {
+    grid-column: 1;
+    width: 100%;
+    display: grid;
+    align-content: end;
+    grid-template-rows: 175px minmax(1px, 1fr);
+    padding: 40px 0 20px;
+
+    &__wrapper {
+        grid-row: 2;
+        display: grid;
+        grid-template-rows: repeat(6, 1fr);
+    }
+
+    &__header {
+        position: relative;
+        grid-row: 1;
+
+        .card-enter & {
+            opacity: 0;
+            left: 30px;
+        }
+
+        .card-enter-active & {
+            opacity: 1;
+            left: 0;
+            transition: 1.2s all $fadeout $easeOutQuint;
+        }
+
+        .card-leave & {
+            opacity: 1;
+            left: 0;
+        }
+
+        .card-leave-active & {
+            opacity: 0;
+            left: -30px;
+            transition: .3s all 0s $easeOutQuint;
+        }
+    }
+}
+
+.list-item {
+    width: 100%;
+    display: grid;
+    align-content: center;
+    border-top: 2px solid rgba(255, 255, 255, .3);
+    padding-left: 120px;
+    position: relative;
+
+    &::before {
+        width: 16px;
+        height: 16px;
+        top: 50%;
+    }
+
+    &__title {
+        text-transform: none;
+        margin: 0;
+    }
+
+    .card-enter & {
+        opacity: 0;
+        left: 30px;
+    }
+
+    .card-enter-active & {
+        opacity: 1;
+        left: 0;
+        transition: 1.2s all 0s $easeOutQuint;
+
+        @for $i from 1 to 10 {
+            &:nth-child(#{$i}) {
+                transition-delay: ($i * .1s) + $fadeout + .35s;
+            }
+        }
+    }
+
+    .card-leave & {
+        opacity: 1;
+        left: 0;
+    }
+
+    .card-leave-active & {
+        opacity: 0;
+        left: -30px;
+        transition: .3s all 0s $easeOutQuint;
+
+        @for $i from 1 to 10 {
+            &:nth-child(#{$i}) {
+                transition-delay: ($i * .1s);
+            }
+        }
+    }
+}

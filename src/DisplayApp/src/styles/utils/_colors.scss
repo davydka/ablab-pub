@@ -1,0 +1,114 @@
+$white: #FFFFFF;
+$black: #000000;
+
+$red: #D44123;
+$orange: #FF7500;
+$blue: #205B90;
+$cyan: #33A19F;
+$purple: #7089C6;
+$green: #49AE1A;
+
+$maroon: #8C1E41;
+$lime: #d7de23;
+$dark-orange: #f26b21;
+$light-orange: #f5911e;
+$accent-yellow: #FFDB77;
+
+$colors: (
+    (
+        name: red,
+        color: $red
+    ),
+    (
+        name: orange,
+        color: $orange
+    ),
+    (
+        name: blue,
+        color: $blue
+    ),
+    (
+        name: cyan,
+        color: $cyan
+    ),
+    (
+        name: purple,
+        color: $purple
+    ),
+    (
+        name: green,
+        color: $green
+    )
+);
+
+$circle-gradients: (
+    (
+        name: red,
+        start: #EF6823,
+        end: #EA232D
+    ),
+    (
+        name: orange,
+        start: #FC9B12,
+        end: #FE7D07
+    ),
+    (
+        name: blue,
+        start: #3D9CAB,
+        end: #2162A5
+    ),
+    (
+        name: cyan,
+        start: #64C6D1,
+        end: #46B8B4
+    ),
+    (
+        name: purple,
+        start: #B2ADD6,
+        end: #7EA4D9
+    ),
+    (
+        name: green,
+        start: #79C51C,
+        end: #5DC027
+    )
+);
+
+$welcome-gradients: (
+    (
+        // Global
+        name: red,
+        start: #f26b21,
+        end: #ea1c2b
+    ),
+    (
+        // LegsWalking
+        name: orange,
+        start: #fbab18,
+        end: #ff6b00
+    ),
+    (
+        // StrengthEndurance
+        name: blue,
+        start: #3fbfad,
+        end: #0d51a3
+    ),
+    (
+        // ArmsHands
+        name: cyan,
+        start: #75cee0,
+        end: #33afa3
+    ),
+    (
+        // ThinkSpeak
+        name: purple,
+        start: #ceb2d4,
+        end: #7ea4d9
+    ),
+    (
+        // Pediatrics
+        name: green,
+        start: #8ecf43,
+        end: #44ba2d
+    )
+);

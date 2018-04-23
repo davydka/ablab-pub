@@ -1,0 +1,5 @@
+.example-template {
+    display: grid;
+    grid-template-rows: repeat(11, 1fr);
+    align-items: center;
+}

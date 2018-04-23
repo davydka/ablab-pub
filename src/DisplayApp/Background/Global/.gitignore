@@ -1,0 +1,7 @@
+build
+bin/*
+!bin/data/
+bin/data/*.hpv
+bin/data/*.mp4
+
+obj/*
