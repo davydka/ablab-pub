@@ -80,7 +80,7 @@ function createWindow() {
 	}
 
 	// Defaults for API URL and screen position
-	const apiUrl = API_ENDPOINT || 'qa.sralab.codeandtheory.net/api/v1/signage-feed/ground_floor';
+	const apiUrl = API_ENDPOINT || 'xxx/api/v1/signage-feed/ground_floor';
 	const screenIndex = SCREEN_NUMBER || 1;
 	const groupNumber = IN_GROUP_OF || 1;
 	const color = getColor(BACKGROUND);

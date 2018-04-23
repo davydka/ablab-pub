@@ -41,8 +41,8 @@ The Master Controller is a utility machine that exists onsite at the hospital. I
   4) The Master Controller will be the VPN point of entry for administering and maintaining the Display Applications. It does this through Jenkins and Ansible.
   
 ## Example CMS API Endpoints
-  * http://qa.sralab.codeandtheory.net/api/v1/active-feeds
-  * http://qa.sralab.codeandtheory.net/api/v1/signage-feed/[FEED_NAME] (i.e. http://qa.sralab.codeandtheory.net/api/v1/signage-feed/ground_floor)
+  * http://xxx/api/v1/active-feeds
+  * http://xxx/api/v1/signage-feed/[FEED_NAME] (i.e. http://xxx/api/v1/signage-feed/ground_floor)
   
 ## Environment Variables and PM2
 This code repository essentially contains 2 applications with 2 codebases (not counting the OpenFrameworks Backgrounds). To manage which application you will be running we use a combination of environment variables and PM2 for process management. Most environment variables are set inside a `.env` file at the root of the src folder. Any environment variables that are set in a user's `~/.profile` will take precedence over anything in the dot-env file. The default install for a production Display Application has the `BACKGROUND` environment variable in the `.profile` so that Ansible compiles the correct background animation on the initial install. If your change your environment variable inside `.profile` you need to run `source ~/.profile` in each console window for your changes to take effect (until you reboot the machine).
